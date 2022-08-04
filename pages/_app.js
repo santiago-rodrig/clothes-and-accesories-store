@@ -1,8 +1,11 @@
 import '../styles/globals.css'
-import { Grommet } from 'grommet'
+import { Box, Grommet } from 'grommet'
 
 const theme = {
   global: {
+    colors: {
+      brand: '#228BE6',
+    },
     font: {
       family: 'Roboto',
       size: '18px',
@@ -13,8 +16,10 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Grommet theme={theme}>
-      <Component {...pageProps} />
+    <Grommet theme={theme} full>
+      <Box fill>
+        <Component {...pageProps} />
+      </Box>
     </Grommet>
   )
 }

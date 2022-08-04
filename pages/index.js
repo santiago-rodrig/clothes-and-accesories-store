@@ -6,7 +6,6 @@ export default function Home() {
       <Head>
         <title>Clothes and Accesories Store</title>
       </Head>
-      <div>Hello World</div>
     </>
   )
 }
