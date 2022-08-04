@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import { Box, Grommet } from 'grommet'
+import { Avatar, Box, Button, Grommet, Nav, Sidebar } from 'grommet'
+import { Cart, Logout, Projects } from 'grommet-icons'
 
 const theme = {
   global: {
@@ -17,8 +18,21 @@ const theme = {
 function MyApp({ Component, pageProps }) {
   return (
     <Grommet theme={theme} full>
-      <Box fill>
-        <Component {...pageProps} />
+      <Box direction="row" fill>
+        <Sidebar
+          flex={false}
+          background="brand"
+          header={<Avatar src="images/avatar.jpg" />}
+          footer={<Button icon={<Logout />} hoverIndicator />}
+        >
+          <Nav gap="small">
+            <Button icon={<Projects />} hoverIndicator />
+            <Button icon={<Cart />} hoverIndicator />
+          </Nav>
+        </Sidebar>
+        <Box flex>
+          <Component {...pageProps} />
+        </Box>
       </Box>
     </Grommet>
   )
